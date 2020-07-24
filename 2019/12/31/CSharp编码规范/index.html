@@ -1,0 +1,416 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="星家星栈">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.2.3">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="https://singa.site">
+    <!--SEO-->
+
+<meta name="keywords" content="开发,转载" />
+
+
+<meta name="description" content="C#命名规范中文版/C#编码规范中文版示例1234567891011121314151617181920212223242526272829303132333435363738394041424..." />
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+    <!--Title-->
+
+<title>
+    
+    C#编码规范 |
+    
+    星家星栈
+</title>
+
+<link rel="alternate" href="/atom.xml" title="星家星栈" type="application/atom+xml">
+
+
+<link rel="icon" href="/favicon.ico">
+
+    
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7.css">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.7.0.css">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash.css">
+
+    
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?e439c398c44f045307566d17e84e785f";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+    
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+<body>
+    <header class="main-header"  style="background-image:url(
+    /img/banner.jpg)"
+     >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title='SingaShen'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+            <!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+            <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+        </div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                        <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="https://singa.site">
+                        星家星栈</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/"><i class="fa fa-home"></i>
+                                首页</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/开发/"><i class="fa fa-file-code-o"></i>
+                                开发</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/读书/"><i class="fa fa-book"></i>
+                                读书</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/生活/"><i class="fa fa-coffee"></i>
+                                生活</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/转载/"><i class="fa fa-edit"></i>
+                                转载</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/思考/"><i class="fa fa-file-text-o"></i>
+                                思考</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/archives/"><i class="fa fa-clock-o"></i>
+                                时间轴</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="C#编码规范">
+            
+            C#编码规范
+            
+        </h1>
+        <div class="post-meta">
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a class="category-link" href="/categories/%E5%BC%80%E5%8F%91/">开发</a> <a class="category-link" href="/categories/%E8%BD%AC%E8%BD%BD/">转载</a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            <a class="tag-link" href="/tags/%E5%BC%80%E5%8F%91/" rel="tag">开发</a> <a class="tag-link" href="/tags/%E8%BD%AC%E8%BD%BD/" rel="tag">转载</a>
+            
+        </span>
+    </span>
+    
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta">
+            2019/12/31</span>
+    </span>
+    
+    
+</div>
+        
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="C-命名规范中文版-C-编码规范中文版"><a href="#C-命名规范中文版-C-编码规范中文版" class="headerlink" title="C#命名规范中文版/C#编码规范中文版"></a>C#命名规范中文版/C#编码规范中文版</h1><h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> 命名空间(Pascal)</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">Namespace</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> 类(Pascal)</span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Class</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> 属性(Pascal)</span></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">int</span> Property &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> 委托(Pascal)</span></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> EventHandler后缀</span></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">delegate</span> <span class="keyword">void</span> <span class="title">EvnetHandler</span>(<span class="params"></span>)</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> 事件(Pascal):On前缀</span></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">event</span> EvnetHandler OnEvent;</span><br><span class="line"></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> 公有字段(Pascal)</span></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">readonly</span> <span class="keyword">int</span> Field1;</span><br><span class="line"></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> 受保护字段(Pascal)</span></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">        <span class="keyword">protected</span> <span class="keyword">int</span> Field2;</span><br><span class="line"></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> 私有字段(_Camel)</span></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">int</span> _field3;</span><br><span class="line">        </span><br><span class="line">        <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> 方法(Pascal)</span></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name="args"&gt;</span>参数(Camel)<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Method</span>(<span class="params"><span class="keyword">int</span> args</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            <span class="comment">//局部变量(Camel)</span></span><br><span class="line">            <span class="keyword">int</span> variable = <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> 接口(Pascal)</span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">interface</span> <span class="title">IInterface</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> 属性接口(Pascal)</span></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">        <span class="keyword">int</span> Property &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> 方法接口(Pascal)</span></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name="args"&gt;</span><span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line">        <span class="function"><span class="keyword">void</span> <span class="title">Method</span>(<span class="params"><span class="keyword">int</span> args</span>)</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> 枚举(Pascal)</span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    <span class="keyword">enum</span> Enum</span><br><span class="line">    &#123;</span><br><span class="line">        Enum1,<span class="comment">//枚举值(Pascal)</span></span><br><span class="line">        Enum2,<span class="comment">//枚举值(Pascal)</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
+<li>微软官方老版本:<a href="https://msdn.microsoft.com/en-us/library/ms229043(v=vs.100).aspx" target="_blank" rel="noopener">https://msdn.microsoft.com/en-us/library/ms229043(v=vs.100).aspx</a></li>
+<li>微软官方新版本:<a href="https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/capitalization-conventions" target="_blank" rel="noopener">https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/capitalization-conventions</a></li>
+<li>ReSharper:<a href="https://www.jetbrains.com/help/resharper/Coding_Assistance__Naming_Style.html" target="_blank" rel="noopener">https://www.jetbrains.com/help/resharper/Coding_Assistance__Naming_Style.html</a></li>
+<li>dofactory:<a href="http://www.dofactory.com/reference/csharp-coding-standards" target="_blank" rel="noopener">http://www.dofactory.com/reference/csharp-coding-standards</a></li>
+<li><a href="https://github.com/ktaranov/naming-convention/blob/master/C%23%20Coding%20Standards%20and%20Naming%20Conventions.md" target="_blank" rel="noopener">https://github.com/ktaranov/naming-convention/blob/master/C%23%20Coding%20Standards%20and%20Naming%20Conventions.md</a></li>
+<li><a href="https://gist.github.com/jburditt/3178227739d3a604663e58fc2e6c15c5" target="_blank" rel="noopener">https://gist.github.com/jburditt/3178227739d3a604663e58fc2e6c15c5</a></li>
+<li><a href="https://www.jianshu.com/p/0d09cc624dae" target="_blank" rel="noopener">https://www.jianshu.com/p/0d09cc624dae</a></li>
+<li><a href="https://github.com/wanfangdata/guide/blob/master/dotnet%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83.md" target="_blank" rel="noopener">https://github.com/wanfangdata/guide/blob/master/dotnet%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83.md</a></li>
+<li><a href="https://gist.github.com/zhuqling/a2700703d088b8746f0c" target="_blank" rel="noopener">https://gist.github.com/zhuqling/a2700703d088b8746f0c</a></li>
+</ul>
+<hr>
+<h3 id="通用规则"><a href="#通用规则" class="headerlink" title="通用规则"></a>通用规则</h3><p>所有的命名都是以下面两种方式进行命名:</p>
+<ul>
+<li>PascalCasing(匈牙利命名法:每个词的第一个字母大写)</li>
+<li>camelCasing(骆驼命名法:第一个词的第一个字母小写,之后每个词的第一个字母大写)</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th align="center">命名方式</th>
+<th align="right">示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Namespace</td>
+<td align="center">Pascal</td>
+<td align="right"><code>namespace System.Security { ... }</code></td>
+</tr>
+<tr>
+<td>Type</td>
+<td align="center">Pascal</td>
+<td align="right"><code>public class StreamReader { ... }</code></td>
+</tr>
+<tr>
+<td>Interface</td>
+<td align="center">Pascal</td>
+<td align="right"><code>public interface IEnumerable { ... }</code></td>
+</tr>
+<tr>
+<td>Method</td>
+<td align="center">Pascal</td>
+<td align="right"><code>public virtual string ToString();</code></td>
+</tr>
+<tr>
+<td>Property</td>
+<td align="center">Pascal</td>
+<td align="right"><code>public int Length { get; }</code></td>
+</tr>
+<tr>
+<td>Delegate</td>
+<td align="center">Pascal</td>
+<td align="right"><code>public delegate void EvnetHandler();</code></td>
+</tr>
+<tr>
+<td>Event</td>
+<td align="center">Pascal</td>
+<td align="right"><code>public event EventHandler Exited;</code></td>
+</tr>
+<tr>
+<td>Public Field</td>
+<td align="center">Pascal</td>
+<td align="right"><code>public readonly int Min = 0;</code></td>
+</tr>
+<tr>
+<td>Protected Field</td>
+<td align="center">Pascal</td>
+<td align="right"><code>protected int Min = 0;</code></td>
+</tr>
+<tr>
+<td>private Field</td>
+<td align="center">Camel</td>
+<td align="right"><code>private int _min = 0;</code></td>
+</tr>
+<tr>
+<td>Enum</td>
+<td align="center">Pascal</td>
+<td align="right"><code>public enum FileMode</code></td>
+</tr>
+<tr>
+<td>Parameter</td>
+<td align="center">Camel</td>
+<td align="right"><code>public static int ToInt32(string value)</code></td>
+</tr>
+<tr>
+<td>Local Variable</td>
+<td align="center">Camel</td>
+<td align="right"><code>void Method(){int number = 10;}</code></td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="特殊说明"><a href="#特殊说明" class="headerlink" title="特殊说明"></a>特殊说明</h3><h4 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h4><p><strong>文件注释</strong>: 文件注释以如下方式进行,在扩展注释时(回车换行时)会自动添加注释行.<br>  <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*******************************************************************</span></span><br><span class="line"><span class="comment">* Description:This is a example class</span></span><br><span class="line"><span class="comment">* Version: 1.0.0</span></span><br><span class="line"><span class="comment">* Date: 20191231</span></span><br><span class="line"><span class="comment">* Author: SingaShen</span></span><br><span class="line"><span class="comment">* Email: isinga.im@gmail.com</span></span><br><span class="line"><span class="comment">* Copyright @ singa.site</span></span><br><span class="line"><span class="comment">*******************************************************************/</span></span><br></pre></td></tr></table></figure><br><strong>命名空间 类型 接口 方法名 属性 事件 字段 枚举</strong>:以”///“的方式注释,编辑器会自动完善注释,并且可以用生成工具直接生成代码注释文档.<br>  <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> 方法(Pascal)</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name="args"&gt;</span>参数(Camel)<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Method</span>(<span class="params"><span class="keyword">int</span> args</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//局部变量(Camel)</span></span><br><span class="line">    <span class="keyword">int</span> variable = <span class="number">10</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br><strong>其他注释</strong>:以”//“的方式注释在上一行或行尾添加注释(比如局部变量,逻辑行)<br><strong>段落注释</strong>:以如下方式进行</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">        public void Method()</span></span><br><span class="line"><span class="comment">        &#123;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">        &#125;</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<p><strong>待办及高亮</strong>:在注释中添加”ToDo”高亮显示注释</p>
+<h4 id="命名空间"><a href="#命名空间" class="headerlink" title="命名空间"></a>命名空间</h4><h4 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h4><ul>
+<li>结构体命名方式与类一致</li>
+<li>泛型默认T</li>
+<li>多个泛型根据反编译微软dll,建议命名T1,T2,T3,T4…</li>
+</ul>
+<h4 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h4><p>接口定义以”I”开头,比如<code>IInterface</code>,<code>IPlayer</code></p>
+<h4 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h4><h4 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h4><p>属性都以Pascal方式命名</p>
+<h4 id="委托"><a href="#委托" class="headerlink" title="委托"></a>委托</h4><p>微软官方建议添加以下两种后缀</p>
+<ul>
+<li>EventHandler</li>
+<li>Callback<br>微软官方不建议添加以下后缀</li>
+<li><del>Delegate</del></li>
+</ul>
+<h4 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h4><ul>
+<li>微软官方建议:事件参数添加后缀”EventArgs”</li>
+<li>习惯命名:事件以On为前缀(比如OnClick)</li>
+</ul>
+<h4 id="字段"><a href="#字段" class="headerlink" title="字段"></a>字段</h4><p>微软团队初期使用Camel方式命名私有字段,后来逐步采用下划线+Camel方式命名,这样做的好处是不必再识别字段是否是局部变量.</p>
+<p>字段建议是非Public类型的,以属性替换公有的字段:这样外部访问更安全(readonly,const等除外),并且外部调用者全部使用Pascal命名方式调用对象逻辑.</p>
+<p>微软官方只规定了public/protected以Pascal方式命名,对internal,private类型的字段没有说明,因此各种第三方规范和插件中对私有字段规范也不一致.</p>
+<p>针对官方的示例代码,书写习惯,智能提示,代码补全和约定俗成的C#规范,建议private采用下划线+Camel方式命名,非Private字段采用Pascal方式命名.</p>
+<p>参考微软官方命名规则,C#高级编程,Resharp命名规范,.Net源码命名规则,建议字段命名方式如下:</p>
+<ul>
+<li>public/protected/internal以Pascal方式命名</li>
+<li>private以下划线+Camel方式命名<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">readonly</span> <span class="keyword">int</span> Field1;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">const</span> <span class="keyword">int</span> Field2 = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">internal</span> <span class="keyword">readonly</span> <span class="keyword">int</span> Field3;</span><br><span class="line"><span class="keyword">internal</span> <span class="keyword">const</span> <span class="keyword">int</span> Field4 = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">int</span> _field5;</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> _field6;</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">readonly</span> <span class="keyword">int</span> _field7;</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">const</span> <span class="keyword">int</span> _field8 = <span class="number">0</span>;</span><br></pre></td></tr></table></figure></li>
+<li><del>以m_为前缀的方式不建议(C++命名方式)</del></li>
+<li><del>以类型为前缀的方式不建议(比如bool类型的字段以b为前缀,枚举以e为前缀)</del></li>
+<li><del>以类型为后缀的方式不建议(比如单位列表unitList,直接取名为units)</del></li>
+</ul>
+<h4 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h4><h4 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h4><h4 id="局部变量"><a href="#局部变量" class="headerlink" title="局部变量"></a>局部变量</h4><p>局部变量可以使用var自动声明类型</p>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+            转载声明：
+            商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">SingaShen</a>
+            
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+<div class="article-nav prev-next-wrap clearfix">
+    
+    <a href="/2020/01/03/%E6%94%B9%E5%8F%98%E4%BB%8E%E5%85%8B%E6%9C%8D%E6%80%9D%E7%BB%B4%E6%83%B0%E6%80%A7%E5%BC%80%E5%A7%8B/" class="pre-post btn btn-default" title='改变从克服思维惰性开始'>
+        <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+        <span class="hidden-xs">
+            改变从克服思维惰性开始</span>
+    </a>
+    
+    
+    <a href="/2019/12/30/git%E4%BA%94%E5%88%86%E9%92%9F%E6%95%99%E7%A8%8B/" class="next-post btn btn-default" title='git五分钟教程'>
+        <span class="hidden-lg">下一篇</span>
+        <span class="hidden-xs">
+            git五分钟教程</span><i class="fa fa-angle-right fa-fw"></i>
+    </a>
+    
+</div>
+
+<div id="comments">
+    
+<p>评论系统未开启，无法评论！</p>
+
+</div>
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">
+            文章目录
+        </h3>
+        
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#C-命名规范中文版-C-编码规范中文版"><span class="toc-text">C#命名规范中文版&#x2F;C#编码规范中文版</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#示例"><span class="toc-text">示例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考资料"><span class="toc-text">参考资料</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#通用规则"><span class="toc-text">通用规则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#特殊说明"><span class="toc-text">特殊说明</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#注释"><span class="toc-text">注释</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#命名空间"><span class="toc-text">命名空间</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#类型"><span class="toc-text">类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#接口"><span class="toc-text">接口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#方法"><span class="toc-text">方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#属性"><span class="toc-text">属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#委托"><span class="toc-text">委托</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#事件"><span class="toc-text">事件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#字段"><span class="toc-text">字段</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#枚举"><span class="toc-text">枚举</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#参数"><span class="toc-text">参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#局部变量"><span class="toc-text">局部变量</span></a></li></ol></li></ol></li></ol></li></ol>
+        
+    </div>
+</aside>
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+<a id="back-to-top" class="icon-btn hide">
+    <i class="fa fa-chevron-up"></i>
+</a>
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy;
+                    2019
+                    <a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow">
+                        浙ICP备17042775号-1</a>
+                    
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script src="/js/app.js?rev=@@hash.js"></script>
+
+</body>
+</html>
